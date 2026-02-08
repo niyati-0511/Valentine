@@ -1,3 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 120px;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+    }
+
+    #yes {
+      background: #ff0033;
+      color: white;
+      font-size: 1.6rem;
+      padding: 20px 45px;
+    }
+
+    #no {
+      background: white;
+      color: #ff0033;
+      position: absolute;
+      left: 60%;
+      top: 0;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.3rem;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    .heart {
+      position: absolute;
+      color: pink;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <h1>Satyam, will you be my Valentine? 💖</h1>
+
+  <div class="buttons">
+    <button id="yes">YES 💘</button>
+    <button id="no">NO 🙈</button>
+  </div>
+
+  <div id="message"></div>
+
+  <div class="signature">— from Niyati 💕</div>
+</div>
+
 <script>
   const noBtn = document.getElementById("no");
   const yesBtn = document.getElementById("yes");
@@ -11,7 +111,6 @@
     message.innerHTML = "Oops 😏 trying to say NO? Not allowed 💕";
   }
 
-  // NO always escapes
   noBtn.addEventListener("mouseover", moveNo);
   noBtn.addEventListener("touchstart", moveNo);
   noBtn.addEventListener("click", (e) => {
@@ -19,7 +118,6 @@
     moveNo();
   });
 
-  // YES click
   yesBtn.addEventListener("click", () => {
     message.innerHTML = "YAYYYY 😍💖 Now you owe me a date 😉";
     confetti();
@@ -55,3 +153,6 @@
     }
   }
 </script>
+
+</body>
+</html>
